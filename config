@@ -1,0 +1,5 @@
+[asana]
+token = 1/1a48 
+org_id = 11586 
+log_path = /var/log/asana/asana.log
+counter_file_path = asana_counter
