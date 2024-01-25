@@ -35,6 +35,7 @@ logs = data.get('data', [])
 page_token = data.get('next_page', {}).get('offset', None)
 
 # Loop to handle pagination
+# Be careful with RAM. You can immediately write the logs to a file.
 while page_token:
     url = f'https://app.asana.com/api/1.0/workspaces/{org_id}/audit_log_events?start_at={quote(last_time)}&end_at={quote(now_date)}&offset={page_token}'
     response = requests.get(url, headers=headers)
